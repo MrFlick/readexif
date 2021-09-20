@@ -1,0 +1,74 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# readexif
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+The readexif package is an R package that allows you to read Exif metadata from jpeg image files.
+
+The existing [exifr](https://cran.r-project.org/package=exifr) package can extract more detailed information and can translate more of the "raw" values found in the Exif data but it requires that you also install [ExifTool](https://exiftool.org/) as a system dependency. While readexif is not as full-featured, it does not require this separate program to be installed.
+
+## Installation
+
+You can install the latest version of readexif from [GitHub](https://github.com/) with:
+
+``` r
+remotes::install_github("MrFlick/readexif")
+```
+This package is currently a work-in-progress and is not
+yet available on CRAN.
+
+## Example
+
+The primary useful function for extracting data is `exif_df` which can take a list of file names and will return a `data.frame` containing the Exif tags for all those images.
+
+```{r example}
+library(readexif)
+sample_dir <- system.file("extdata", package="readexif")
+sample_files <- file.path(sample_dir, 
+                          c("Iguana_iguana_male_head.jpg", 
+                            "Red-headed_Rock_Agama.jpg"))
+transform(exif_df(sample_files), file=basename(file))
+```
+
+Another useful function is `scan_jpeg`. This is the function will return the positions for each of the different sections in the jpeg file.
+
+```{r cars}
+sample_file <- system.file("extdata", "Iguana_iguana_male_head.jpg", package="readexif")
+toc <- scan_jpeg(sample_file)
+toc
+toc[[6]]
+```
+
+## References
+
+This package was created using the helpful information from the following resources
+
+  * [JPEG File Layout and Format](http://vip.sugovica.hu/Sardi/kepnezo/JPEG%20File%20Layout%20and%20Format.htm)
+  * [The Metadata in JPEG files](https://dev.exiv2.org/projects/exiv2/wiki/The_Metadata_in_JPEG_files)
+  * [ExifTool list of EXIF tags](https://exiftool.org/TagNames/EXIF.html)
+  * [Description of Exif file format](https://www.media.mit.edu/pia/Research/deepview/exif.htm)
+
+This package includes sample images from [ianare/exif-samples](https://github.com/ianare/exif-samples/tree/master/jpg). Some images originally were from [Wikimedia Commons](https://commons.wikimedia.org/). Those images are
+
+  * [Positive_roll_film.jpg](https://commons.wikimedia.org/wiki/File:Positive_roll_film.jpg) by [Ianaré Sévi](https://commons.wikimedia.org/wiki/User:Ianare), 
+  * [Ducati749.jpg](https://commons.wikimedia.org/wiki/File:Ducati749.jpg) by [Monster1000](https://fr.wikipedia.org/wiki/User:Monster1000), 
+  * [Red-headed_Rock_Agama.jpg](https://commons.wikimedia.org/wiki/File:Red-headed_Rock_Agama.jpg) by [Chris_huh](https://commons.wikimedia.org/wiki/User:Chris_huh) and
+  * [Iguana_iguana_male_head.jpg](https://commons.wikimedia.org/wiki/File:Iguana_iguana_male_head.jpg) by [Ianaré Sévi](https://commons.wikimedia.org/wiki/User:Ianare).
+  
+Note that these images were scaled down to reduce file size.

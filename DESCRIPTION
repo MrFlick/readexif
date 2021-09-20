@@ -1,0 +1,16 @@
+Package: readexif
+Type: Package
+Title: Extract metadata from jpeg files
+Version: 0.1.0
+Author: Matthew Flickinger
+Maintainer: Matthew Flickinger <mflick@umich.edu>
+Description: Find and extract metadata including Exif tags
+    from jpeg files.
+Imports: methods
+License: CC BY 4.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Suggests: 
+    testthat
