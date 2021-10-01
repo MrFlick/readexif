@@ -107,6 +107,7 @@ parse_exif_tag <- function(input, endian, block_start=0) {
   attr(tag, "tag_length") <- 12
   attr(tag, "data_offset") <- data_offset
   attr(tag, "data_length") <- byte_count
+  class(tag) <- "exif_tag"
   tag
 }
 

@@ -113,11 +113,68 @@ toc
 toc[[6]]
 #> SECTION SOF0 -- (offset: 5800, length: 17)
 #> .$marker            : 0xFFC0 (65472)
-#> .$section           : SOF0          
-#> .$Precision         : 8             
-#> .$ImageHeight       : 68            
-#> .$ImageWidth        : 100           
+#> .$section           : SOF0
+#> .$Precision         : 8
+#> .$ImageHeight       : 68
+#> .$ImageWidth        : 100
 #> .$NumberOfComponents: 3
+toc[[2]]$tags
+#> EXIF TAGS -- (count: 47)
+#> [[1]]  Make                    : Canon              
+#> [[2]]  Model                   : Canon EOS 40D      
+#> [[3]]  Orientation             : 1                  
+#> [[4]]  XResolution             : 72, 1              
+#> [[5]]  YResolution             : 72, 1              
+#> [[6]]  ResolutionUnit          : 2                  
+#> [[7]]  Software                : GIMP 2.4.5         
+#> [[8]]  DateTime                : 2008:07:31 10:38:11
+#> [[9]]  YCbCrPositioning        : 2                  
+#> [[10]] ExifOffset              : 214                
+#> [[11]] GPSInfo                 : 978                
+#> [[12]] ExposureTime            : 1, 160             
+#> [[13]] FNumber                 : 71, 10             
+#> [[14]] ExposureProgram         : 1                  
+#> [[15]] ISO                     : 100                
+#> [[16]] ExifVersion             : <4 byte(s)>        
+#> [[17]] DateTimeOriginal        : 2008:05:30 15:56:01
+#> [[18]] DateTimeDigitized       : 2008:05:30 15:56:01
+#> [[19]] ComponentsConfiguration : <4 byte(s)>        
+#> [[20]] ShutterSpeedValue       : 483328, 65536      
+#> [[21]] ApertureValue           : 368640, 65536      
+#> [[22]] ExposureCompensation    : 0, 1               
+#> [[23]] MeteringMode            : 5                  
+#> [[24]] Flash                   : 9                  
+#> [[25]] FocalLength             : 135, 1             
+#> [[26]] UserComment             : <264 byte(s)>      
+#> [[27]] SubSecTime              : 00                 
+#> [[28]] SubSecTimeOriginal      : 00                 
+#> [[29]] SubSecTimeDigitized     : 00                 
+#> [[30]] FlashpixVersion         : <4 byte(s)>        
+#> [[31]] ColorSpace              : 1                  
+#> [[32]] PixelXDimension         : 100                
+#> [[33]] PixelYDimension         : 68                 
+#> [[34]] InteropOffset           : 948                
+#> [[35]] FocalPlaneXResolution   : 3888000, 876       
+#> [[36]] FocalPlaneYResolution   : 2592000, 583       
+#> [[37]] FocalPlaneResolutionUnit: 2                  
+#> [[38]] CustomRendered          : 0                  
+#> [[39]] ExposureMode            : 1                  
+#> [[40]] WhiteBalance            : 0                  
+#> [[41]] SceneCaptureType        : 0                  
+#> [[42]] ThumbnailCompression    : 6                  
+#> [[43]] ThumbnailXResolution    : 72, 1              
+#> [[44]] ThumbnailYResolution    : 72, 1              
+#> [[45]] ThumbnailResolutionUnit : 2                  
+#> [[46]] ThumbnailOffset         : 1090               
+#> [[47]] ThumbnailByteCount      : 1378
+toc[[2]]$tags[[2]]
+#> TAG -- (offset: 52, length: 12)
+#> .$code : 0x0110 (272)
+#> .$name : Model
+#> .$fmt  : 2 (ascii string)
+#> .$count: 14
+#> .$value: Canon EOS 40D
+#>  [tag data offset: 182, length: 14]
 ```
 
 ## References

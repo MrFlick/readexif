@@ -53,6 +53,8 @@ sample_file <- system.file("extdata", "Iguana_iguana_male_head.jpg", package="re
 toc <- scan_jpeg(sample_file)
 toc
 toc[[6]]
+toc[[2]]$tags
+toc[[2]]$tags[[2]]
 ```
 
 ## References
