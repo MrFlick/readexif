@@ -10,9 +10,11 @@ scan_jpeg(input, extract_first = NULL)
 \item{input}{A character path to a jpeg file or a seek-able connection object}
 
 \item{extract_first}{(Optional) If you only to extract a single section,
-you may provide a function that will receive a section and should
-return TRUE if only that section should be returned. If no sections match,
-NULL will be returned.}
+you may provide the marker number, the section name, the
+section ID, or a function that will take a section and
+return TRUE for the section you want to extract. Only
+the first instance of a matching section is returned.
+If no sections match, NULL will be returned.}
 }
 \value{
 A list containing image metadata and tags if \code{extract_first} is

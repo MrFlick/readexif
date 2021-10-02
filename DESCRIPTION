@@ -6,7 +6,6 @@ Author: Matthew Flickinger
 Maintainer: Matthew Flickinger <mflick@umich.edu>
 Description: Find and extract metadata including Exif tags
     from jpeg files.
-Imports: methods
 License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true

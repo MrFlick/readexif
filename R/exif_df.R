@@ -28,12 +28,11 @@
 #' sample_files <- list.files(sample_dir, pattern="\\.jpg$", full.names = TRUE)
 #' exif_df(sample_files)
 #'
-#' @importFrom methods is
 
 exif_df <- function(files, silent_errors = FALSE) {
   raw <- lapply(files, function(f) {
-    exif <- tryCatch(scan_jpeg(f, extract_first=function(x) methods::is(x, "exif")), error=function(e) e)
-    if (methods::is(exif, "error")) {
+    exif <- tryCatch(scan_jpeg(f, extract_first="Exif"), error=function(e) e)
+    if (inherits(exif, "error")) {
       if (!silent_errors) stop(paste(conditionMessage(exif), "-", f))
       data.frame(file = f, Error=conditionMessage(exif))
     } else if(!is.null(exif)) {

@@ -13,9 +13,11 @@
 #'
 #' @param input A character path to a jpeg file or a seek-able connection object
 #' @param extract_first (Optional) If you only to extract a single section,
-#'     you may provide a function that will receive a section and should
-#'     return TRUE if only that section should be returned. If no sections match,
-#'     NULL will be returned.
+#'     you may provide the marker number, the section name, the
+#'     section ID, or a function that will take a section and
+#'     return TRUE for the section you want to extract. Only
+#'     the first instance of a matching section is returned.
+#'     If no sections match, NULL will be returned.
 #'
 #' @return A list containing image metadata and tags if `extract_first` is
 #'     NULL. Otherwise only the matching section is returned and NULL is
@@ -34,6 +36,9 @@ scan_jpeg <- function(input, extract_first=NULL) {
     on.exit(close(input))
   } else if (is.na(input)) {
     return(NULL)
+  }
+  if (!is.null(extract_first)) {
+    extract_first <- create_extractor(extract_first)
   }
   magic <- readBin(input, integer(), 1, size = 2, signed = FALSE, endian = "big")
   if (magic != 0xffd8) {

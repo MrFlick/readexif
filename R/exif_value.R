@@ -39,8 +39,8 @@ exif_value <- function(files, tag, fill_value=NA, named=TRUE,
     stop(paste("Expecting exactly 1 tag, found", length(tag)))
   }
   vals <- sapply(files, function(f) {
-    exif <- tryCatch(scan_jpeg(f, extract_first=function(x) methods::is(x, "exif")), error=function(e) e)
-    if (methods::is(exif, "error")) {
+    exif <- tryCatch(scan_jpeg(f, extract_first="Exif"), error=function(e) e)
+    if (inherits(exif, "error")) {
       if (!silent_errors) stop(paste(conditionMessage(exif), "-", f))
       fill_value
     } else if(!is.null(exif)) {
