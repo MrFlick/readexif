@@ -15,13 +15,14 @@
 #' the main image and thumbnail. Tags from the thumbnail region (IDF1)
 #' will have names prefixed with "Thumbnail" to avoid duplicate names.
 #'
-#' @param files A character vector containing paths to jpeg file.
+#' @param files A character vector containing paths to jpeg files.
 #' @param silent_errors If TRUE, no errors are triggered when
 #'   processing files but an "Error" column is added to the output
 #'   if an error occurs
 #'
 #' @return A data.frame
 #' @export
+#' @seealso [section_df()]
 #'
 #' @examples
 #' sample_dir <- system.file("extdata", package="readexif")

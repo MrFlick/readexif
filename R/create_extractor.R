@@ -1,4 +1,5 @@
 create_extractor <- function(x) {
+  if (is.null(x)) return(function(x) TRUE)
   if (is.function(x)) return(x)
   if (is.character(x)) return(function(section) {
     if (x %in% c("APP", "SOF")) {

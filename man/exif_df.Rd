@@ -7,7 +7,7 @@
 exif_df(files, silent_errors = FALSE)
 }
 \arguments{
-\item{files}{A character vector containing paths to jpeg file.}
+\item{files}{A character vector containing paths to jpeg files.}
 
 \item{silent_errors}{If TRUE, no errors are triggered when
 processing files but an "Error" column is added to the output
@@ -37,4 +37,7 @@ sample_dir <- system.file("extdata", package="readexif")
 sample_files <- list.files(sample_dir, pattern="\\\\.jpg$", full.names = TRUE)
 exif_df(sample_files)
 
+}
+\seealso{
+\code{\link[=section_df]{section_df()}}
 }
