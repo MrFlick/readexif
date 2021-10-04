@@ -32,6 +32,7 @@
 scan_jpeg <- function(input, extract_first=NULL) {
   if (is.character(input)) {
     if (length(input)>1) stop(paste("Only one file can be read at a time. Found: ", length(input)))
+    if (!file.exists(input)) stop(paste("File does not exist: ", input))
     input <- file(input, "rb")
     on.exit(close(input))
   } else if (is.na(input)) {
