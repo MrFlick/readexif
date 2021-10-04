@@ -50,7 +50,8 @@ section_df <- function(files, extract=NULL, silent_errors = FALSE, allow_multipl
         if (is.null(extract)) {
           scan_jpeg(f, extract_first=NULL)[1]
         } else {
-          list(scan_jpeg(f, extract_first=extract))
+          temp <- scan_jpeg(f, extract_first=extract)
+          if (!is.null(temp)) list(temp) else temp
         }
       }, error=function(e) e)
     }
